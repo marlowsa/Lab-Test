@@ -3,5 +3,5 @@
   tasks:
   - name: remove httpd package
     yum:
-      Name: httpd
+      name: httpd
       state: absent
