@@ -6,11 +6,11 @@
       name: httpd
       state: latest
   - name: Enable and start httpd service
-   service:
+    service:
       name: httpd
       state: started
       enabled: yes
   - name: Create index.html file for hosting static content
-   copy:
+    copy:
       Content: "Hoorray!!!!"
       Dest: /var/www/html/index.html
