@@ -1,4 +1,4 @@
-- hosts labservers
+- hosts: labservers
   become: yes
   tasks:
   - name: httpd
