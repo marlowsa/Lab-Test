@@ -7,7 +7,7 @@
       state: latest
   - name: Enable and start httpd service
    service:
-      name: Create index.html file for hosting static content
+      name: httpd
       state: started
       enabled: yes
   - name: Create index.html file for hosting static content
