@@ -1,5 +1,5 @@
 - hosts: labservers
-  become: yes
-  tasks: 
+  become: yes 
+  tasks:
   - name: httpd
-    state: absent 
+    state: absent
