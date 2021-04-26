@@ -5,13 +5,12 @@
     yum:
       name: httpd
       state: latest
-  -name: Enable and start httpd service
+  - name: Enable and start httpd service
    service:
       name: Create index.html file for hosting static content
       state: started
       enabled: yes
-  -name: Create index.html file for hosting static content
+  - name: Create index.html file for hosting static content
    copy:
       Content: "Hoorray!!!!"
       Dest: /var/www/html/index.html
-      
