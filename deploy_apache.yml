@@ -12,5 +12,5 @@
         enabled: yes
   - name: Create index.html file for hosting static content
     copy:
-      Content: "Hoorray!!!! My first playbook ran succesfully"
-      Dest: /var/www/html/index.html
+      content: "Hoorray!!!! My first playbook ran succesfully"
+      dest: /var/www/html/index.html
