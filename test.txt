@@ -1,4 +1,8 @@
 This is my file Hi Greg 
 My 3rd commit
+<<<<<<< HEAD
 My 4th edit
 My 5th edit
+=======
+My 4th Edit
+>>>>>>> 0fff3bf1391535b8f53940686237fa19f3c22a9d
