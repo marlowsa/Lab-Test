@@ -1,4 +1,4 @@
-hosts: labservers
-tasks:
-  - name: check connectivity
-    ping:
+- hosts: labservers
+  tasks:
+    - name: check connectivity
+      ping:
