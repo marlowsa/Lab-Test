@@ -1,1 +1,2 @@
 first line of test 2
+line 2
