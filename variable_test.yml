@@ -13,7 +13,7 @@
     yum:
       name:
         - "{{ web_pkg }}"
-        - "{{ fiewall_pkg}}"
+        - "{{ firewall_pkg}}"
         - "{{ python_pkg }}"
       state: latest
   - name: Start and enable the {{ fiewall_service }} service
