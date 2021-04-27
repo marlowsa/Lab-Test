@@ -33,7 +33,7 @@
       dest: /var/www/html/index.html
 
   - name: Open the port for {{ rule }}
-    firewallld:
+    firewalld:
       service: "{{ rule }}"
       permanent: true
       immediate: true
