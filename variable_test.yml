@@ -2,13 +2,13 @@
   hosts: labservers
   become: yes
   vars:
-    web_pkg: httpd
-    firewall_pkg: firewalld
-    web_service: httpd
-    firewall_service: firewalld
-    python_pkg: python-httplib2
-    rule: http
-   tasks:
+      web_pkg: httpd
+      firewall_pkg: firewalld
+      web_service: httpd
+      firewall_service: firewalld
+      python_pkg: python-httplib2
+      rule: http
+  tasks:
   - name: Install the required packages
     yum:
       name:
@@ -18,9 +18,9 @@
     state: latest
   - name: Start and enable the {{ fiewall_service }} service
     service:
-      name: "{{ firewall_service }}"
-      enabled: true
-      state: started
+        name: "{{ firewall_service }}"
+        enabled: true
+        state: started
 
   -name: start and enable the {{ web_service }} service
     service:
@@ -28,11 +28,11 @@
       enabled: true
       state: started
   -name: Create web content to be served
-    firewalld:
-      service: "{{ rule }}"
-      permanent: true
-      immmediate: true
-      state: enabled
+    copy:
+        content: "Example web content"
+        enabled: true
+        state: started
+
   -name: Open the port for {{ rule }}
     firewallld:
       service: "{{ rule }}"
