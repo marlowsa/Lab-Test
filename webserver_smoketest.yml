@@ -1,4 +1,4 @@
--name: Verify the Apache service
+- name: Verify the Apache service
   Hosts: localhost
   tasks:
     - name: Ensure the webserver is reachable
