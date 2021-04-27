@@ -30,8 +30,7 @@
   - name: Create web content to be served
     copy:
       content: "Example web content"
-      enabled: true
-      state: started
+      dest: /var/www/html/index.html
 
   - name: Open the port for {{ rule }}
     firewallld:
