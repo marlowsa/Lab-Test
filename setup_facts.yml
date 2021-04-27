@@ -4,9 +4,9 @@
   vars:
       remote_dir: /etc/ansible/facts.d
       facts_file: custom.fact
-    Tasks:
+   Tasks:
    - name: Create the Remote Directory
-      file:
+     file:
         state: directory
         recurse: yes
         path: "{{ Remote_dir }}"
