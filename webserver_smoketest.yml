@@ -1,5 +1,5 @@
 - name: Verify the Apache service
-  Hosts: localhost
+  Host: localhost
   tasks:
     - name: Ensure the webserver is reachable
       url:
