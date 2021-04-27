@@ -3,6 +3,6 @@
   become: no
   tasks:
     - name: Ensure the webserver is reachable
-      url:
+      uri:
         url: http://ansiblelab10
         status_code: 200
