@@ -9,7 +9,7 @@
     python_pkg: python-httplib2
     rule: http
    tasks:
-    Name: Install the required packages
+  - name: Install the required packages
     yum:
       name:
         - "{{ web_pkg }}"
@@ -39,7 +39,7 @@
       permanent: true
       immediate: true
       state: enabled
-      
+
 
 
 
