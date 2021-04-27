@@ -23,18 +23,18 @@
       state: started
 
   - name: start and enable the {{ web_service }} service
-   service:
+    service:
       name: "{{ web_service }}"
       enabled: true
       state: started
   - name: Create web content to be served
-   copy:
+    copy:
       content: "Example web content"
       enabled: true
       state: started
 
   - name: Open the port for {{ rule }}
-   firewallld:
+    firewallld:
       service: "{{ rule }}"
       permanent: true
       immediate: true
