@@ -1,0 +1,46 @@
+- name: Install Apache and start the service
+  hosts: labservers
+  become: yes
+  vars:
+    web_pkg: httpd
+    firewall_pkg: firewalld
+    web_service: httpd
+    firewall_service: firewalld
+    python_pkg: python-httplib2
+    rule: http
+   tasks:
+    Name: Install the required packages
+    yum:
+      name:
+        - "{{ web_pkg }}"
+        - "{{ fiewall_pkg}}"
+        - "{{ python_pkg }}"
+    state: latest
+  - name: Start and enable the {{ fiewall_service }} service
+    service:
+      name: "{{ firewall_service }}"
+      enabled: true
+      state: started
+
+  -name: start and enable the {{ web_service }} service
+    service:
+      name: "{{ web_service }}"
+      enabled: true
+      state: started
+  -name: Create web content to be served
+    firewalld:
+      service: "{{ rule }}"
+      permanent: true
+      immmediate: true
+      state: enabled
+  -name: Open the port for {{ rule }}
+    firewallld:
+      service: "{{ rule }}"
+      permanent: true
+      immediate: true
+      state: enabled
+      
+
+
+
+    
