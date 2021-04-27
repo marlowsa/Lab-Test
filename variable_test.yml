@@ -18,9 +18,9 @@
     state: latest
   - name: Start and enable the {{ fiewall_service }} service
     service:
-        name: "{{ firewall_service }}"
-        enabled: true
-        state: started
+      name: "{{ firewall_service }}"
+      enabled: true
+      state: started
 
   -name: start and enable the {{ web_service }} service
     service:
@@ -29,9 +29,9 @@
       state: started
   -name: Create web content to be served
     copy:
-        content: "Example web content"
-        enabled: true
-        state: started
+      content: "Example web content"
+      enabled: true
+      state: started
 
   -name: Open the port for {{ rule }}
     firewallld:
