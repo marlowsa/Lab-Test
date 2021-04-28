@@ -46,6 +46,7 @@
       append_privs: yes
       password: "{{ db['password'] }}"
       login_password: "{{ db['password'] }}"
+      host: "{{ item }}"
     loop:
       - "{{ inventory_hostname }}"
       - '%'
