@@ -20,7 +20,7 @@
     enabled: true
 
 - name: Open mysql port
-  firewalld
+  firewalld:
     service: mysql
     state: enabled
     immediate: true
@@ -61,4 +61,4 @@
     state: import
     target: "/tmp/{{ db['backupfile'] }}"
     login_password: "{{ db['password'] }}"
-    
+
