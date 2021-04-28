@@ -2,29 +2,29 @@
 # tasks file for roles/db-tier
 - name: Install mysql
   yum:
-    name: "{{ item }}"
-    state: latest
+   name: "{{ item }}"
+   state: latest
   loop:
     - "{{ db_pkg }}"
 
 - name: Start mysql
   service:
-    name: "{{ db_srv }}"
-    enabled: true
-    state: started
+   name: "{{ db_srv }}"
+   enabled: true
+   state: started
 
 - name: Start the firewalld
   service:
-    name: firewalld
-    state: started
-    enabled: true
+   name: firewalld
+   state: started
+   enabled: true
 
 - name: Open mysql port
   firewalld:
-    service: mysql
-    state: enabled
-    immediate: true
-    permanent: true
+   service: mysql
+   state: enabled
+   immediate: true
+   permanent: true
 
 - name: Check if root password is set
   shell: >
