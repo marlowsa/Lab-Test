@@ -4,7 +4,7 @@
     rule: http
   tasks:
     - name: Include the variables from the YAML file
-      inlcude_vars: vars/variables.yml
+      include_vars: vars/variables.yml
 
     - name: Inlclude the environement file and set the variables
       import_tasks: tasks/environment.yml
