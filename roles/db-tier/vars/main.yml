@@ -1,6 +1,6 @@
 ---
 # vars file for roles/db-tier
-db-pkg:
+db_pkg:
   - mariadb
   - mariadb-server
   - mysql-python
@@ -11,4 +11,3 @@ db:
   database: userdb
   password: redhat
   backupfile: userdb.backup
-  
