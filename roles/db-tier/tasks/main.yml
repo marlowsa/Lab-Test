@@ -51,10 +51,10 @@
     - "{{ inventory_hostname }}"
     - '%'
 
-  -name: Copy database dump file
-    copy:
-      src: "{{ db['backupfile'] }}"
-      dest: /tmp
+-name: Copy database dump file
+  copy:
+    src: "{{ db['backupfile'] }}"
+    dest: /tmp
 
 - name: restore database
   mysql_db:
