@@ -34,7 +34,7 @@
 
 - name: Create Document Root
   file:
-    path: /var/www.vhost/
+    path: /var/www/vhost/
     state: directory
 
 - name: Copy index.j2 file
