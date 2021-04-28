@@ -20,7 +20,7 @@
 
     - name: Start the firewall
       service:
-        name: firealld
+        name: firewalld
         state: started
         enabled: true
 
