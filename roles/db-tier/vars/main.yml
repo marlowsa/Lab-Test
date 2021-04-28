@@ -3,7 +3,7 @@
 db_pkg:
   - mariadb
   - mariadb-server
-  - mysql-python
+  - mySQL-python
   - firewalld
 db_srv: mariadb
 db:
