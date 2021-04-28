@@ -12,4 +12,53 @@
     name: "{{ db_srv }}"
     enabled: true
     state: started
+
+- name: Start the firewalld
+  service:
+    name: firewalld
+    state: started
+    enabled: true
+
+- name: Open mysql port
+  firewalld
+    service: mysql
+    state: enabled
+    immediate: true
+    permanent: true
+
+- name: Check if root password is set
+  shell: >
+    mysqladmin -u root status
+  changed_when: false
+  failed_when: false
+  register: root_pwd_check
+
+- name: Setting up mariad password
+  mysql_user:
+    name: "{{ db['user'] }}"
+    password: "{{ db['password'] }}"
+  when: root_pwd_check.rc == 0
+
+  - name: DB users have privileges on all databases
+    mysql_user:
+      name: "{{ db['user'] }}"
+      priv: "*.*:ALL"
+      append_privs: yes
+      password: "{{ db['password'] }}"
+      login_password: "{{ db['password'] }}"
+    loop:
+      - "{{ inventory_hostname }}"
+      - '%'
+
+  -name: Copy database dump file
+    copy:
+      src: "{{ db['backupfile'] }}"
+      dest: /tmp
+
+- name: restore database
+  mysql_db:
+    name: "{{ db['database'] }}"
+    state: import
+    target: "/tmp/{{ db['backupfile'] }}"
+    login_password: "{{ db['password'] }}"
     
