@@ -1,10 +1,10 @@
 ---
 # vars file for roles/db-tier
 db_pkg:
-  - mariadb
-  - mariadb-server
-  - MySQL-python
-  - firewalld
+ - mariadb
+ - mariadb-server
+ - MySQL-python
+ - firewalld
 db_srv: mariadb
 db:
   user: root
