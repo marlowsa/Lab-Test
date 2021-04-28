@@ -1,0 +1,4 @@
+package_name: openssh
+parameters: /SSHServerFeature
+local_port: 22
+Protocol_name: tcp
