@@ -14,7 +14,7 @@
     start_mode: auto
   when: ansible_distribution == "Microsoft Windows Server 2012 R2 Datacenter"
 
-- name:
+- name: Add win_firewall_rule
   win_firewall_rule:
     name: "{{ service_name }}"
     localport: "{{ local_port }}"
