@@ -41,11 +41,11 @@
 
   - name: DB users have privileges on all databases
     mysql_user:
-      name: "{{ db['user'] }}"
+      name: "{{ db['user']}}"
       priv: "*.*:ALL"
       append_privs: yes
-      password: "{{ db['password'] }}"
-      login_password: "{{ db['password'] }}"
+      password: "{{ db['password']}}"
+      login_password: "{{ db['password']}}"
       host: "{{ item }}"
     loop:
       - "{{ inventory_hostname }}"
