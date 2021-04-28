@@ -39,7 +39,7 @@
 
 - name: Copy index.j2 file
   copy:
-    src: index.php
+    src: /home/roles_setup/index.php
     dest: /var/www/vhost/index.php
     mode: 0644
     owner: apache
