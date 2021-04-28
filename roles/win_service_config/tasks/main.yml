@@ -1,7 +1,7 @@
 ---
 # tasks file for roles/win_service_config
 - name: Install Windows package
-  win_chocolatey
+  win_chocolatey:
     name: "{{ package_name }}"
     params: "{{ parameters }}"
     state: latest
@@ -23,4 +23,3 @@
     protocol: "{{ protocol_name }}"
     state: present
     enabled: yes
-    
