@@ -1,6 +1,6 @@
 - name: create users accounts for all our servers
   hosts: labservers
-  become: true
+  become: True
   remote_user: smarlow
   vars_files:
     - secret.yml
