@@ -1,7 +1,7 @@
-- name: create users accounts for all our servers
+- name: create user accounts for all our servers
   hosts: labservers
   become: True
-  remote_user: smarlow
+  remote_user: mniswon
   vars_files:
     - secret.yml
   tasks:
